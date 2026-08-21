@@ -1,0 +1,132 @@
+================================================================================
+  ATLAS · TRES REGIONES  (Para Riki)
+  Cómo usar este proyecto en otra laptop
+================================================================================
+
+QUÉ ES
+------
+Pokédex Nivel 3 de la clase (consumo de PokeAPI con Next.js).
+Incluye las primeras 3 regiones / generaciones:
+  - Kanto  (1–151)
+  - Johto  (152–251)
+  - Hoenn  (252–386)
+
+Total: 386 Pokémon.
+
+
+QUÉ DEBE DESCARGAR / INSTALAR (en la otra laptop)
+-------------------------------------------------
+1) Node.js LTS (versión 20 o superior)
+   - Entrar a: https://nodejs.org
+   - Descargar el instalador LTS para Windows
+   - Instalarlo con las opciones por defecto
+   - Al terminar, abrir una terminal nueva y comprobar:
+       node -v
+       npm -v
+     (deben mostrar un número de versión)
+
+2) (Opcional) Git
+   - Solo si van a subir el proyecto a GitHub
+   - https://git-scm.com
+
+
+CÓMO ABRIR EL PROYECTO
+----------------------
+1) Copiar TODA la carpeta "Para Riki" a la otra laptop
+   (USB, OneDrive, ZIP, etc.)
+
+   Tip: si la carpeta pesa mucho, pueden BORRAR antes de copiar:
+     - tres-regiones\node_modules
+     - tres-regiones\.next
+   Luego en la otra laptop hacen npm install (paso 3).
+
+2) Abrir la terminal dentro de esta carpeta del proyecto:
+
+       Para Riki\tres-regiones
+
+   En Windows (PowerShell o CMD):
+       cd "ruta\completa\Para Riki\tres-regiones"
+
+3) Instalar dependencias (solo la primera vez, o si borraron node_modules):
+
+       npm install
+
+   Esto descarga Next.js, React y el resto. Necesita internet.
+
+4) Arrancar la app:
+
+       npm run dev
+
+5) Abrir el navegador en:
+
+       http://localhost:3000
+
+
+SI LA CARPETA VIENE SIN node_modules
+------------------------------------
+Es normal (pesa mucho). En ese caso SOLO hace falta:
+
+       npm install
+       npm run dev
+
+Si YA trae node_modules y falla al abrir, borren la carpeta node_modules
+y vuelvan a ejecutar npm install.
+
+
+COMANDOS ÚTILES
+---------------
+  npm install     -> instala librerías
+  npm run dev     -> modo desarrollo (para trabajar / mostrar en clase)
+  npm run build   -> compila para producción
+  npm run start   -> sirve la versión compilada (después de build)
+  npm run lint    -> revisa el código
+
+
+QUÉ INCLUYE ESTA VERSIÓN (Nivel 3 + extras)
+-------------------------------------------
+  - Búsqueda por nombre o número (con debounce)
+  - Grid con paginación
+  - Filtro por tipo
+  - Filtro por región (Kanto / Johto / Hoenn)
+  - Ordenar por número o nombre
+  - Ficha: imagen, tipos, stats, descripción en español
+  - Toggle variocolor (shiny)
+  - Evoluciones
+  - Favoritos (localStorage)
+  - Comparar 2 Pokémon (Promise.all)
+  - Hook useFetch propio
+  - Equipo de hasta 6 Pokémon
+  - Botón "Encuentro" (Pokémon aleatorio)
+  - Escuchar el grito del Pokémon
+
+
+INTERNET
+--------
+Hace falta conexión a internet para:
+  - npm install (primera vez)
+  - Cargar datos e imágenes desde pokeapi.co
+
+
+PROBLEMAS COMUNES
+-----------------
+  - "npm no se reconoce": Node.js no está instalado o hay que reiniciar
+    la terminal / la laptop después de instalarlo.
+  - Puerto 3000 ocupado: cierren la otra app o usen:
+        npm run dev -- -p 3001
+    y abran http://localhost:3001
+  - Error de red al cargar Pokémon: revisar internet / firewall.
+
+
+ESTRUCTURA
+----------
+  Para Riki\
+    COMO_USAR.txt          <- este archivo
+    tres-regiones\         <- el proyecto Next.js
+      package.json
+      app\
+      components\
+      hooks\
+      lib\
+
+
+================================================================================
